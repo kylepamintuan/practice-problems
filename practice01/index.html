@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Problem 1</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			Build a function that takes in an input string and an array of strings. The function should output an array of strings that are longer than the single input string.
+		*/
+		function biggerWords(input, arr)
+		{
+			var str_length = input.length;
+			var new_arr = [];
+
+			for (var i in arr)
+			{
+				if(arr[i].length > str_length)
+					new_arr.push(arr[i]);
+			}
+			return new_arr;
+		}
+
+		var myArray = ['bug', 'insect', 'mammal', 'reptile', 'mammoth', 'turtles'];
+		var result = biggerWords('whales', myArray);
+		console.log(result);
+	</script>
+</body>
+</html>
