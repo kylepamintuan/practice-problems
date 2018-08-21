@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Problem 3</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			Build a function that sorts an array into a multidimensional array grouped by data type.
+		*/
+		function groupArray(arr)
+		{
+			var num_arr = [];
+			var string_arr = [];
+			var bool_arr = [];
+
+			for(var i in arr)
+			{
+				switch(typeof arr[i])
+				{
+					case 'number':
+						num_arr.push(arr[i]);
+						break;
+					case 'string':
+						string_arr.push(arr[i]);
+						break;
+					case 'boolean':
+						bool_arr.push(arr[i]);
+						break;
+					default:
+						console.log("something went wrong");
+				}
+			}
+
+			arr = [string_arr, num_arr, bool_arr];
+			console.log(arr);
+		}
+
+		var myArray = ['hello', 34, true, false, 'goodbye', 56, 12, '25', true];
+		groupArray(myArray);
+
+		/*
+			Expected Output: [['hello, 'goodbye', '25'], [34, 56, 12], [true, false, true]]
+			Actual Output: [['hello, 'goodbye', '25'], [34, 56, 12], [true, false, true]]
+		*/
+	</script>
+</body>
+</html>
