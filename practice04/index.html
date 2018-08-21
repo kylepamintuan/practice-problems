@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Problem 4</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			Bubble Sort:
+
+			Build a function that takes in an array of strings and outputs a new array with the same strings in alphabetical order.
+		*/
+		function bubbleSort(arr)
+		{
+			var n = arr.length-1;
+			var i = 0;
+
+			for(var i=0; i<n; i++)
+			{
+				for(var j=0; j<n-i; j++)
+				{
+					if(arr[j+1] < arr[j])
+					{
+						var temp = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = temp;
+					}
+				}
+			}
+			console.log(arr);
+		}
+
+		var myArray = ['mouse', 'cat', 'dog', 'human'];
+		bubbleSort(myArray);
+
+		/*
+			Expected Output: ['cat', 'dog', 'human', 'mouse']
+			Actual Output: ['cat', 'dog', 'human', 'mouse']
+		*/
+	</script>
+</body>
+</html>
