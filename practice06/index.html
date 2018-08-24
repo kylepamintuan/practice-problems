@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Problem 6</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			Numeric Spirals:
+
+			Build a function that takes one parameter and prints out the Fibonacci sequence.
+		*/
+
+		function printFibonacci(n)
+		{
+			var seq = '';
+			var n1, n2, sum;
+
+			for(var i=0; i<n; i++)
+			{
+				if(i===0)
+				{
+					n1 = 0;
+					seq += n1 + ' ';
+				}
+				else if(i===1)
+				{
+					n2 = 1;
+					seq += n2 + ' ';
+				}
+				else if(i>1)
+				{
+					sum = n1 + n2;
+					seq += sum + ' ';
+
+					n1 = n2;
+					n2 = sum;
+				}
+			}
+			console.log(seq);
+		}
+		printFibonacci(12);
+
+		/*
+			Expected Output: 0 1 1 2 3 5 8 13 21 34 55 89
+			Actual Output: 
+		*/
+	</script>
+</body>
+</html>
