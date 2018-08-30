@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<title>Practice Problem 8</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			Character Convert:
+
+			Given the following function call:
+				character_convert('the cat in the hat');
+
+			And the resulting output:
+				"11610410132999711632105110321161041013210497116";
+
+			Create a function definition that achieves the output with the given input.
+		*/
+		var ascii_map = new Map();
+
+		function characterConvert(str)
+		{
+			var ascii_str = '';
+
+			for(var i in str)
+			{
+				var character = str[i];
+
+				if(!ascii_map.get(character))
+				{
+					ascii_map.set(character, str.charCodeAt(i));
+					//printMap(ascii_map);
+				}
+
+				ascii_str += ascii_map.get(character);
+			}
+
+			return ascii_str;
+		}
+
+		function printMap(map)
+		{
+			console.log('==== ASCII Map ====');
+			if(map.size > 0)
+			{
+				for (var [key, value] of map)
+		  			console.log(key + ': ' + value);
+			}
+			else
+				console.log('map is empty...');
+		}
+
+		var result = characterConvert('the cat in the hat');
+		console.log(result);
+		printMap(ascii_map);
+	</script>
+</body>
+</html>
