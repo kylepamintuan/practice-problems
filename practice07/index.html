@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<title>Practice Problem 7</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			Igpay Atinlay:
+
+			Build a function that will translate text into "Pig Latin" Take the first consonant and move it to the end of a word and then affix "ay" to the end of that word."
+		*/
+
+		function toPigLatin(str)
+		{
+			var words = str.split(" ");
+
+			for(var i in words)
+			{
+				var character = words[i].charAt(0);
+				
+				if(!isVowel(character))
+				{
+					var new_word = words[i].slice(1, words.length);
+					new_word += character.toLowerCase() + 'ay';
+					words[i] = new_word;
+				}
+			}
+			var new_str = words.join(' ');
+			return new_str;
+		}
+
+		function isVowel(char)
+		{
+			var letter = char.toLowerCase();
+
+			if(letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u')
+				return true;
+
+			return false;
+		}
+
+		var sentence = 'Hello my name is Stu';
+		console.log(toPigLatin(sentence));
+
+		/*
+			Expected Output: "ellohay ymay ameya siay tusay"
+			Actual Output: "ellohay ymay amenay is tusay"
+		*/
+	</script>
+</body>
+</html>
